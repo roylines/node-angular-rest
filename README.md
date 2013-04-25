@@ -1,4 +1,3 @@
-express-angular-resource
-========================
+# node-angular-resource
 
 AngularJS $resource bindings for express in node
