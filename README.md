@@ -1,3 +1,2 @@
-# node-angular-resource
-
+# node-angular-resource [![Build Status](https://travis-ci.org/roylines/node-angular-resource.png?branch=master)](https://travis-ci.org/roylines/node-angular-resource)
 AngularJS $resource bindings for express in node
