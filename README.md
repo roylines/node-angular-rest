@@ -50,7 +50,7 @@ var angularResource = require('angular-resource'),
 
 var app = express();
 
-angularResource(app, '/api/1', task);
+angularResource(app, '/api/1', 'task');
 
 app.listen(3000);
 ```
@@ -65,7 +65,7 @@ var middleware = function(req, res, next) {
 	return next(req, res);
 };
 
-angularResource(app, '/api/1', task, middleware);
+angularResource(app, '/api/1', 'task', middleware);
 ```
 
 
