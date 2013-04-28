@@ -50,21 +50,24 @@ var angularResource = require('angular-resource'),
 
 var app = express();
 
-var middleware = function(req, res, next) {
-	return next(req, res);
-};
-
-// without middleware
 angularResource(app, '/api/1', task);
-
-// with middleware
-angularResource(app, '/api/2', task, middleware);
 
 app.listen(3000);
 ```
 
-This will bind the required endpoints through to task.js. Note that both delete and remove are
-routed to the remove method.
+This will bind the required endpoints through to task.js. Note that both 'delete' and 'remove' are
+routed to the 'remove' method.
+
+If you wish to use middleware, then define the binding as follows:
+
+```javascript
+var middleware = function(req, res, next) {
+	return next(req, res);
+};
+
+angularResource(app, '/api/1', task, middleware);
+```
+
 
 If you don't want to support all of the default $resource actions, then just omit them
 from the object. In the example above,  if you don't want to support remove then just define task.js as follows:
@@ -86,3 +89,6 @@ task.query = function(req, res) {
 
 module.exports = task;
 ```
+
+You can now create includes for all of the $resource objects your angularjs services require and
+bind them in the same way.
