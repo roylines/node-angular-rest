@@ -13,7 +13,7 @@ var myServices = angular.module('myServices', ['ngResource'])
 
 myServices.factory('Task', function($resource) {
 	return $resource('api/tasks/:id', { id: "@_id" });
-})
+});
 ```
 
 The myServices Task will, by default, now support get, save, query, remove and delete. The
