@@ -20,6 +20,9 @@ describe('angular-resource', function() {
 			it('should bind get', function() {
 				assert(app.get.calledWith('/api/testObject/:id', testObject.get));
 			});
+			it('should bind create', function() {
+				assert(app.post.calledWith('/api/testObject', testObject.create));
+			});
 			it('should bind save', function() {
 				assert(app.post.calledWith('/api/testObject/:id', testObject.save));
 			});
@@ -39,6 +42,9 @@ describe('angular-resource', function() {
 			});
 			it('should bind get', function() {
 				assert(app.get.calledWith('/api/testObject/:id', middleware, testObject.get));
+			});
+			it('should bind create', function() {
+				assert(app.post.calledWith('/api/testObject', middleware, testObject.create));
 			});
 			it('should bind save', function() {
 				assert(app.post.calledWith('/api/testObject/:id', middleware, testObject.save));

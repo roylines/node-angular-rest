@@ -3,6 +3,9 @@ var testObject = { };
 testObject.get = function() {
 };
 
+testObject.create = function() {
+};
+
 testObject.save = function() {
 };
 
