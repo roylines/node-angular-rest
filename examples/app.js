@@ -1,10 +1,10 @@
 var angularResource = require('angular-resource'),
-		express = require('express');
+  express = require('express');
 
 var app = express();
 
 var middleware = function(req, res, next) {
-	return next(req, res);
+  return next(req, res);
 };
 
 // without middleware
