@@ -92,3 +92,11 @@ module.exports = task;
 
 You can now create includes for all of the $resource objects your angularjs services require and
 bind them in the same way.
+
+
+If your controllers do not live in the same directory as the file you're defining your routes, you
+may set the base path using the `.init()` function:
+
+```javascript
+var angularResource = require('angular-resource').init('../your/relative/path');
+```
