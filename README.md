@@ -1,8 +1,8 @@
-# node-angular-resource [![Build Status](https://travis-ci.org/roylines/node-angular-resource.png?branch=master)](https://travis-ci.org/roylines/node-angular-resource)
+# node-angular-rest [![Build Status](https://travis-ci.org/roylines/node-angular-rest.png?branch=master)](https://travis-ci.org/roylines/node-angular-rest)
 [AngularJS](http://angularjs.org/) [$resource](http://docs.angularjs.org/api/ngResource.$resource) bindings for express in node
 
 ## Description
-angular-resource is a node module that simplifies the use of [angularjs](http://angularjs.org/)
+angular-rest is a node module that simplifies the use of [angularjs](http://angularjs.org/)
 [$resource](http://docs.angularjs.org/api/ngResource.$resource) factory by creating the default
 set of resource actions for get, save, query, remove and delete.
 
@@ -17,7 +17,7 @@ myServices.factory('Task', function($resource) {
 ```
 
 The myServices Task will, by default, now support get, save, query, remove and delete. The
-required endpoints can simply be routed via express by using the angular-resource module:
+required endpoints can simply be routed via express by using the angular-rest module:
 
 First create a task.js with the following details:
 ```javascript
@@ -42,15 +42,15 @@ task.remove = function(req, res) {
 module.exports = task;
 ```
 
-and then use angular-resource to bind it into express.
+and then use angular-rest to bind it into express.
 
 ```javascript
-var angularResource = require('angular-resource'),
+var angularRest = require('angular-rest'),
 		express = require('express');
 
 var app = express();
 
-angularResource(app, '/api/1', 'task');
+angularRest(app, '/api/1', 'task');
 
 app.listen(3000);
 ```
@@ -65,7 +65,7 @@ var middleware = function(req, res, next) {
 	return next(req, res);
 };
 
-angularResource(app, '/api/1', 'task', middleware);
+angularRest(app, '/api/1', 'task', middleware);
 ```
 
 

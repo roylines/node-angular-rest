@@ -1,4 +1,4 @@
-var angularResource = require('angular-resource'),
+var angularRest = require('angular-rest'),
   express = require('express');
 
 var app = express();
@@ -8,9 +8,9 @@ var middleware = function(req, res, next) {
 };
 
 // without middleware
-angularResource(app, '/api/1', 'task');
+angularRest(app, '/api/1', 'task');
 
 // with middleware
-angularResource(app, '/api/2', 'task', middleware);
+angularRest(app, '/api/2', 'task', middleware);
 
 app.listen(3000);

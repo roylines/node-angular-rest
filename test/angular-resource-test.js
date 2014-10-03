@@ -1,9 +1,9 @@
 var assert = require('assert'),
-		angularResource = require('../lib/angular-resource'),
+		angularRest = require('../lib/angular-rest'),
 		sinon = require('sinon'),
 		testObject = require('./testObject');
 
-describe('angular-resource', function() {
+describe('angular-rest', function() {
 	var app;
 	beforeEach(function() {
 		app = {
@@ -15,7 +15,7 @@ describe('angular-resource', function() {
 	describe('without middleware', function() {
 		describe('using testObject', function() {
 			beforeEach(function() {
-				angularResource(app, '/api', 'testObject');
+				angularRest(app, '/api', 'testObject');
 			});
 			it('should bind get', function() {
 				assert(app.get.calledWith('/api/testObject/:id', testObject.get));
@@ -38,7 +38,7 @@ describe('angular-resource', function() {
 		var middleware = { };
 		describe('using testObject', function() {
 			beforeEach(function() {
-				angularResource(app, '/api', 'testObject', middleware);
+				angularRest(app, '/api', 'testObject', middleware);
 			});
 			it('should bind get', function() {
 				assert(app.get.calledWith('/api/testObject/:id', middleware, testObject.get));

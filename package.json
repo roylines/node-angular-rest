@@ -1,15 +1,15 @@
 {
-  "name": "angular-resource",
-	"description": "AngularJS $resource bindings for express.",
+  "name": "angular-rest",
+	"description": "AngularJS $resource bindings for express. Formally the artist known as angular-resource",
 	"version": "0.1.1",
   "licenses": [{
     "type": "MIT",
-    "url": "https://github.com/roylines/node-angular-resource/raw/master/LICENSE"
+    "url": "https://github.com/roylines/node-angular-rest/raw/master/LICENSE"
   }],
   "author": { "name": "Roy Lines", "url": "http://roylines.co.uk" },
   "repository": {
     "type": "git",
-    "url": "https://github.com/roylines/node-angular-resource.git"
+    "url": "https://github.com/roylines/node-angular-rest.git"
   },
   "keywords": ["angularjs", "express", "$resource"],
 	"dependencies": {
@@ -18,7 +18,7 @@
     "mocha": "*",
     "sinon": "*"
   },
-  "main": "./lib/angular-resource",
+  "main": "./lib/angular-rest",
   "engines": { "node": ">= 0.6.0" },
   "scripts": {
     "test": "mocha test/*-test.js"
